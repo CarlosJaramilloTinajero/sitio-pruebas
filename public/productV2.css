@@ -1,0 +1,257 @@
+.paddingB {
+    padding-bottom: 150%;
+    /* height: 300px; */
+    /* position: absolute; */
+    width: 100%;
+    /* top: 0; */
+    /* left: 0; */
+}
+
+.descount {
+    cursor: pointer;
+    position: absolute;
+    top: 3%;
+    right: -2.5%;
+    width: max-content;
+    background-color: rgba(70, 94, 246, 0.983);
+    box-shadow: 0 0 15px rgba(8, 28, 151, 0.502);
+    padding: 0 9px;
+    padding-bottom: 2px;
+    border-radius: 5px;
+}
+
+.descount span {
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 12px;
+}
+
+.images:hover .img1 {
+    opacity: 0;
+    scale: .8;
+}
+
+.images:hover .img2 {
+    opacity: 1;
+    scale: 1.05;
+}
+
+.productV2Div .img1,
+.productV2Div .img2 {
+    position: absolute;
+    cursor: pointer;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    transition: opacity .5s ease-in-out, scale .2s ease-in-out;
+
+}
+
+.productV2Div .img2 {
+    opacity: 0;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.productReferences {
+    padding: 0 10px;
+}
+
+.productPrice {
+    display: flex;
+    padding: 0 10px;
+    margin-top: 5px;
+}
+
+.priceDescount {
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: line-through;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+.title {
+    padding: 0 10px;
+}
+
+.images {
+    padding: 20px;
+    position: relative;
+    height: 70%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+}
+
+.descriptions {
+    border-radius: 8px;
+    background-color: rgba(5, 41, 143, 0.03);
+    position: relative;
+    width: 100%;
+    height: 30%;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.images:hover .product-hover-action {
+    bottom: 20px;
+    opacity: 1;
+    /* transition: bottom .7s ease-in-out, opacity 1s ease-in-out; */
+}
+
+.product-hover-action {
+    position: absolute;
+    bottom: -20%;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: bottom .5s ease-in-out, opacity .8s ease-in-out;
+}
+
+.cart-action {
+    display: flex;
+    width: 85%;
+    margin: 0 auto;
+}
+
+
+.view:hover svg,
+.wishlist:hover svg {
+    animation: svgCart 1s;
+}
+
+@keyframes svgCart {
+    0% {
+        margin-top: 0;
+    }
+
+    25% {
+        margin-top: -100%;
+        opacity: 0;
+    }
+
+    50% {
+        margin-top: 100%;
+        opacity: 0;
+    }
+
+
+    100% {
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+
+.cart:hover,
+.view:hover,
+.wishlist:hover {
+    scale: 1.05;
+}
+
+.cart,
+.view,
+.wishlist {
+    cursor: pointer;
+    transition: scale .3s ease-in-out;
+    overflow: hidden;
+}
+
+.view,
+.wishlist {
+    width: 17%;
+    height: 40px;
+    position: relative;
+    border-radius: 10%;
+    background-color: rgba(255, 255, 255, 0.927);
+}
+
+.view svg,
+.wishlist svg {
+    position: absolute;
+    width: 45%;
+    height: 45%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.cart {
+    position: relative;
+    height: 40px;
+    width: 60%;
+    background-image: radial-gradient(circle at 12.5% 12.5%, #ec73e7 0, #d665e0 25%, #be55d8 50%, #a446d0 75%, #8b3aca 100%);
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 2px;
+}
+
+.cart a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 1);
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+.cart a span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: max-content;
+    transform: translate(-50%, -50%);
+}
+
+.shadowCart {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.8);
+    transition: box-shadow .1s ease-in-out;
+}
+
+.images:hover .shadowCart {
+    transition: box-shadow .5s ease-in-out;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+}
+
+.sku {
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.4);
+    margin-bottom: 10px;
+}
+
+.price {
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.name {
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 15px;
+
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+.productV2Div {
+    border-radius: 10px;
+    max-width: 310px;
+    width: 100%;
+    height: max-content;
+    position: relative;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 60px;
+    transition: height .3s ease-in-out;
+}

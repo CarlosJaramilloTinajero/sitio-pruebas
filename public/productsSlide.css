@@ -1,0 +1,275 @@
+.paddingB {
+    padding-bottom: 150%;
+    width: 100%;
+}
+
+.productsSlide {
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    /* border-radius: 3px; */
+    max-width: 310px;
+    width: 100%;
+    height: max-content;
+    position: relative;
+    border-left: 1px rgba(0, 0, 0, 0.1) solid;
+    /* box-shadow: 0 0 1px rgba(0, 0, 0, 0.7); */
+
+    /* border-left: 1px rgba(0, 0, 0, 0.4) solid; */
+    margin-bottom: 60px;
+    transition: height .3s ease-in-out;
+}
+
+.image:hover {
+    scale: 1.1;
+}
+
+.productsSlide .img1 {
+    /* position: absolute; */
+    cursor: pointer;
+    /* top: 10px; */
+    /* left: 0; */
+    width: 100%;
+    height: 90%;
+
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: scale .3s ease-in-out;
+}
+
+.imageBN {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: grayscale(90%);
+}
+
+.descriptionProduct {
+    width: 90%;
+    position: absolute;
+    bottom: 0;
+    text-align: left;
+    left: 5%;
+}
+
+.productPrice {
+    display: flex;
+    padding: 0 10px;
+    margin-top: 5px;
+}
+
+.title {
+    padding: 0 10px;
+}
+
+.productsSlide:hover .descriptionProductHover {
+    opacity: 1;
+}
+
+.productsSlide:hover .descriptionProduct {
+    opacity: 0;
+}
+
+.images {
+    padding: 20px;
+    cursor: pointer;
+    position: relative;
+    height: 65%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+}
+
+.descriptions {
+    /* border-radius: 8px; */
+    background-color: rgba(5, 41, 143, 0.03);
+    /* background-color: rgba(229, 123, 24, 0.05); */
+    position: relative;
+    width: 100%;
+    height: 35%;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.category {
+    padding: 0 10px;
+    margin-top: 5px;
+}
+
+.images:hover .product-hover-action {
+    bottom: 20px;
+    opacity: 1;
+}
+
+.product-hover-action {
+
+    position: absolute;
+    bottom: -20%;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: bottom .5s ease-in-out, opacity .8s ease-in-out;
+}
+
+.cart-action {
+    display: flex;
+    width: 85%;
+    justify-content: center;
+    margin: 0 auto;
+
+}
+
+.cart:hover svg,
+.view:hover svg,
+.wishlist:hover svg {
+    animation: svgCart 1s;
+}
+
+@keyframes svgCart {
+    0% {
+        margin-top: 0;
+    }
+
+    33% {
+        margin-top: -100%;
+        opacity: 0;
+    }
+
+    66% {
+        margin-top: 100%;
+        opacity: 0;
+    }
+
+
+    100% {
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+
+.cart:hover,
+.view:hover,
+.wishlist:hover {
+    scale: 1.05;
+}
+
+.cart,
+.view,
+.wishlist {
+    cursor: pointer;
+    transition: scale .3s ease-in-out;
+    overflow: hidden;
+}
+
+.cart,
+.view,
+.wishlist {
+    width: 35px;
+    height: 35px;
+    position: relative;
+    border-radius: 10%;
+    background-color: rgba(255, 255, 255, 0.927);
+}
+
+.cart {
+    margin: 0 10px;
+}
+
+.cart svg,
+.view svg,
+.wishlist svg {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(0, 0, 0, 0.8);
+}
+
+
+.shadowCart {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.8);
+    transition: box-shadow .1s ease-in-out;
+}
+
+.images:hover .shadowCart {
+    transition: box-shadow .5s ease-in-out;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+}
+
+.descriptions a:hover {
+    color: rgba(23, 93, 255, 0.894);
+}
+
+@media screen and (min-width: 500px) {
+    .name {
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+        display: flex;
+        justify-content: center;
+        color: rgba(0, 0, 0, 0.6);
+        margin-bottom: 7px;
+        text-decoration: none;
+    }
+
+    .price {
+        font-family: 'Roboto', sans-serif;
+        font-size: 18px;
+        margin-bottom: 5px;
+        text-align: center;
+        width: 100%;
+        color: rgba(0, 0, 0, 0.8);
+    }
+
+    .linkCategory {
+        font-family: 'Roboto', sans-serif;
+        font-size: 13px;
+        display: flex;
+        justify-content: center;
+        color: rgba(0, 0, 0, 0.6);
+        margin-bottom: 10px;
+        text-decoration: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .name {
+        font-family: 'Roboto', sans-serif;
+        font-size: 13px;
+        display: flex;
+        justify-content: center;
+        color: rgba(0, 0, 0, 0.6);
+        margin-bottom: 7px;
+        text-decoration: none;
+    }
+
+    .price {
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        margin-bottom: 4px;
+        text-align: center;
+        width: 100%;
+        color: rgba(0, 0, 0, 0.8);
+    }
+
+    .linkCategory {
+        font-family: 'Roboto', sans-serif;
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+        color: rgba(0, 0, 0, 0.6);
+        margin-bottom: 7px;
+        text-decoration: none;
+    }
+
+}
