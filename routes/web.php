@@ -102,3 +102,9 @@ Route::get('/prueba-job', function () {
 
     return response('Fin');
 });
+
+
+
+Route::get('/editor-quill', function () {
+    return view('frontend.editoresBlog.editor-quill');
+});

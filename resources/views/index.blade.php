@@ -88,6 +88,16 @@
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Editores blog
+                            </a>
+                            <ul class="dropdown-menu">
+
+                                <li><a class="dropdown-item" href="/editor-quill">Quill</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Vistas inicio
                             </a>
                             <ul class="dropdown-menu">
@@ -118,6 +128,10 @@
 
     <div class="contenedor">
         @yield('content')
+    </div>
+
+    <div class="marginTop">
+        @yield('editor')
     </div>
 
     <div class="marginTop">
