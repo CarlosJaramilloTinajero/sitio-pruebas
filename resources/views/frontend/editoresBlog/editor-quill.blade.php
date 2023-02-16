@@ -30,6 +30,7 @@
 <br>
 <button class="btn btn-primary" onclick="getCodigo()">Codigo</button>
 
+<!-- El problema puede ser que no se esta agregando la clase para los estilos de blog 'ql-editor' -->
 <div id="example" class="ql-editor"></div>
 
 <script>
