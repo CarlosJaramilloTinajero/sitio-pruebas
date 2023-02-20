@@ -1,7 +1,7 @@
 @extends('index')
 @section('vistaInicio')
 
-<div style="max-width: 1500px; margin-left: auto; margin-right: auto;">
+<div style="max-width: 1700px; margin-left: auto; margin-right: auto;">
 @livewire('inicio-'. $version, ['products' => $products])
 </div>
 <script>

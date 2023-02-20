@@ -45,10 +45,11 @@ Route::resource('marcas', MarcaController::class);
 // Rutas user
 Route::resource('user', userController::class);
 
-Route::get('/category/{id}', [products::class, 'categoryId'])->name('category-id');
+// Categorias
+Route::get('/category/{id}', [products::class, 'categoryId'])->name('category.show');
 
-Route::get('/product/{id}', [products::class, 'productId'])->name('product-id');
-
+// Producto
+Route::get('/product/{id}', [products::class, 'productId'])->name('product.show');
 
 // Rutas auth
 Route::get('/registro', [registerController::class, 'registerView'])->name('registroVista');

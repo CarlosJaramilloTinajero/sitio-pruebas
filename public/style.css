@@ -1,0 +1,24 @@
+/* ::-webkit-scrollbar {
+    display: none;
+} */
+
+.tabla-users {
+    width: 95%;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.marginTop {
+    margin-top: 57px;
+}
+
+.contenedorForm {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+body {
+    background-color: rgba(154, 154, 154, 0.203);
+    overflow-x: hidden;
+}

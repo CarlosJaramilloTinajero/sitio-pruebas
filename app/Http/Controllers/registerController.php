@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class registerController extends Controller
 {
@@ -32,7 +33,7 @@ class registerController extends Controller
         $user->name = $request->name;
         $user->lastname = $request->lastname;
         $user->email = $request->email;
-        $user->password = encrypt($request->password);
+        $user->password = Hash::make($request->password);
 
         if ($request->status == null) {
             $user->status = 0;

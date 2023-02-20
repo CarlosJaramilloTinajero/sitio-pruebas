@@ -5,7 +5,7 @@
     <ul class="dropdown-menu">
         @foreach ($categorias as $categoria)
         @if (count($categoria->products) > 0)
-        <li><a class="dropdown-item" href="{{ route('category-id', ['id' => $categoria->id]) }}">{{ $categoria->name }}</a></li>
+        <li><a class="dropdown-item" href="{{ route('category.show', ['id' => $categoria->id]) }}">{{ $categoria->name }}</a></li>
         @endif
         @endforeach
     </ul>

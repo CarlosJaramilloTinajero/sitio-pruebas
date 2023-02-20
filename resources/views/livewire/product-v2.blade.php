@@ -4,9 +4,9 @@
     <div class="paddingB"></div>
 
     <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-        <div class="images" data-aos="zoom-in" data-aos-duration="600">
+        <div class="images">
             <picture class="img1">
-                <img class="image" src="{{ isset($product->img_path) ? $product->img_path : 'https://www.exel.com.mx/Repositorio/FTP/Contenidos/Imagenes/Productos/DEHLATAB301_zoom.jpg'}}" alt="">
+                <img data-aos="zoom-in" data-aos-duration="600" class="image" src="{{ isset($product->img_path) ? $product->img_path : 'https://www.exel.com.mx/Repositorio/FTP/Contenidos/Imagenes/Productos/DEHLATAB301_zoom.jpg'}}" alt="">
             </picture>
             <picture class="img2">
                 <img class="image" src="https://www.exel.com.mx/Repositorio/FTP/Contenidos/Imagenes/Productos/DECMOCAB006_zoom.jpg" alt="">

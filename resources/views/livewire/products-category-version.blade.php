@@ -1,19 +1,33 @@
-<link rel="stylesheet" href="{{ asset('productsSlide.css') }}">
-
 <div>
+    <link rel="stylesheet" href="{{ asset('productsSlide.css') }}">
     <section class="splide" data-splide='
     {
         "type":"loop",
         "autoplay": true,
         "perPage": 5,
         "breakpoints": {
-            "1100": {"perPage": 4},
-            "850": {"perPage": 3},
+            "1250": {"perPage": 4},
+            "900": {"perPage": 3},
             "650": {"perPage": 2},
             "530": {"perPage": 2},
             "400": {"perPage": 2}
         }
     }'>
+        <div class="splide__arrows">
+            <button class="splide__arrow splide__arrow--prev">
+                <span class="material-symbols-outlined">
+                    arrow_back_ios
+                </span>
+            </button>
+            <button class="splide__arrow splide__arrow--next">
+                <span class="material-symbols-outlined">
+                    arrow_forward_ios
+                </span>
+            </button>
+        </div>
+
+        <ul class="splide__pagination splide__pagination--ltr" style="opacity: 0;"></ul>
+
 
         <div class="splide__track">
             <ul class="splide__list">
@@ -24,10 +38,10 @@
                         <div class="paddingB"></div>
 
                         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-                            <div class="images" data-aos="zoom-in" data-aos-duration="600">
-                                <picture class="img1">
+                            <div class="images">
+                                <div data-aos="zoom-in" data-aos-duration="600" class="img1">
                                     <img class="image" src="{{ isset($product->img_path) ? $product->img_path : 'https://www.exel.com.mx/Repositorio/FTP/Contenidos/Imagenes/Productos/DEHLATAB301_zoom.jpg'}}" alt="">
-                                </picture>
+                                </div>
 
                                 <div class="shadowCart"></div>
 
@@ -73,7 +87,7 @@
                                 </div>
 
                                 <div class="category">
-                                    <a href="/" class="linkCategory">{{ $product->category->name }}</a>
+                                    <a href="{{ route('category.show', ['id' => $product->category_id])}}" class="linkCategory">{{ isset($product->category) ? substr($product->category->name, 0, 18) : ''}}...</a>
                                 </div>
                             </div>
                         </div>
