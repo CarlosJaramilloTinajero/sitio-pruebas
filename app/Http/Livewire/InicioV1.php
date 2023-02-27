@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Product;
+use Illuminate\Support\Facades\View;
 use Livewire\Component;
 
 class InicioV1 extends Component
@@ -11,6 +12,7 @@ class InicioV1 extends Component
 
     public function mount()
     {
+        // dd(view()->shared('varGlobal'));
         $this->productsModa = Product::where('category_id', 3)->get()->take(10);
     }
 

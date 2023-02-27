@@ -4,8 +4,8 @@
 
 <section class="contenedor">
 
-    <h1 class="tituloCategoria">{{ $categoria->name }}</h1>
-    <hr>
+    <h1 class="tituloCategoria loading">{{ $categoria->name }}</h1>
+    <hr class="loading">
 
     @livewire('products-categoy', ['category' => $categoria])
 

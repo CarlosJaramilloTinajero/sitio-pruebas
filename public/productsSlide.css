@@ -1,5 +1,5 @@
 .paddingB {
-    padding-bottom: 160%;
+    padding-bottom: 170%;
     width: 100%;
 }
 
@@ -22,7 +22,7 @@
     transition: height .3s ease-in-out;
 }
 
-.image:hover {
+.images:hover .image {
     scale: 1.1;
 }
 

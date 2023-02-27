@@ -1,14 +1,14 @@
 <div>
-<link rel="stylesheet" href="{{ asset('productV2.css') }}">
-    <section class="contenedorForm mb-4">
+    <link rel="stylesheet" href="{{ asset('productV2.css') }}">
+    <section class="contenedorForm mb-4 loading">
         <div style="display: flex; margin-top: 20px;">
-            <input type="text" wire:model="search" id="search" wire:keyup.enter="searchEvent(document.getElementById('search').value)" placeholder="Buscar producto" class="form-control">
-            <button class=" btn-search" wire:click="searchEvent(document.getElementById('search').value)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+            <input type="text" wire:model="search" id="search" wire:keyup.enter="searchEvent" placeholder="Buscar producto" class="form-control">
+            <button class=" btn-search" wire:click="searchEvent"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                 </svg> <span>Buscar</span></button>
         </div>
     </section>
-    <div class="filtros">
+    <div class="filtros loading">
         <div class="dropdown">
             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-funnel" viewBox="0 0 16 16">
@@ -34,8 +34,8 @@
         </div>
     </div>
 
-    <section class="productsVersions row">
-        @foreach ($products as $product)
+    <section class="productsVersions row loading">
+        @foreach ($productos as $product)
         <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
             <section class="productV2Div" style="margin-left: auto; margin-right: auto;">
 
@@ -44,7 +44,8 @@
                 <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
                     <div class="images">
                         <div class="img1">
-                            <img data-aos="zoom-in" data-aos-duration="600" class="image" src="{{ isset($product->img_path) ? $product->img_path : 'https://www.exel.com.mx/Repositorio/FTP/Contenidos/Imagenes/Productos/DEHLATAB301_zoom.jpg'}}" alt="">
+                            <!-- data-aos="zoom-in" data-aos-duration="600" -->
+                            <img class="image" src="{{ isset($product->img_path) ? $product->img_path : 'https://www.exel.com.mx/Repositorio/FTP/Contenidos/Imagenes/Productos/DEHLATAB301_zoom.jpg'}}" alt="">
                         </div>
                         <div class="img2">
                             <img class="image" src="https://www.exel.com.mx/Repositorio/FTP/Contenidos/Imagenes/Productos/DECMOCAB006_zoom.jpg" alt="">
@@ -101,10 +102,28 @@
             </section>
         </div>
         @endforeach
+        {{ $productos->links() }}
     </section>
 
-    <!-- <section class="ietmsP1 row" id="ietmsP">
-        @foreach ($products as $product)
+    <div class="animacionCarga" id="animacionCarga">
+
+        <script>
+            window.onload = () => {
+                window.scroll(0, 0);
+            };
+            let loadings = document.getElementsByClassName('loading');
+            let id = setTimeout(() => {
+                let animacion = document.getElementById('animacionCarga');
+                animacion.style.opacity = 0;
+                for (let i = 0; i < loadings.length; i++) {
+                    loadings[i].style.opacity = "1";
+                }
+                window.clearInterval(id);
+            }, 2000);
+        </script>
+
+        <!-- <section class="ietmsP1 row" id="ietmsP">
+        @foreach ($productos as $product)
         <div class="col-md-4 col-xl-3">
             <div class="ietmP1">
                 <a href="">
@@ -136,4 +155,4 @@
         </div>
         @endforeach
     </section> -->
-</div>
+    </div>
