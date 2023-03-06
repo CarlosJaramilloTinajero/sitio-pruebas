@@ -102,5 +102,9 @@
                 @endforeach
             </ul>
         </div>
+        <!-- Add the progress bar element -->
+        <div class="my-slider-progress">
+            <div id="my-slider-progress-bar" class="my-slider-progress-bar"></div>
+        </div>
     </section>
 </div>

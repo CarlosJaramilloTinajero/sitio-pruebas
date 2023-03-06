@@ -12,6 +12,7 @@ use App\Http\Controllers\registerController;
 use App\Http\Controllers\userController;
 use App\Jobs\newUser;
 use App\Jobs\pruebaJob;
+use App\Models\Categories;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
@@ -56,6 +57,7 @@ Route::get('/registro', [registerController::class, 'registerView'])->name('regi
 Route::post('/registro', [registerController::class, 'register'])->name('registro');
 Route::get('/login', [loginController::class, 'loginView'])->name('loginVista');
 Route::post('/login', [loginController::class, 'login'])->name('login');
+Route::get('/logout', [loginController::class, 'logout'])->name('logout');
 
 
 // Pruebas Guzzle API json placeholder
@@ -69,8 +71,18 @@ Route::get('/productos-catalogo/{version}', function ($version) {
 
 Route::get('/vistas-inicio/{version}', function ($version) {
     $products = Product::where('category_id', 1)->get()->take(30);
-    return view('frontend.vistasInicio.index', ['version' => $version, 'products' => $products]);
-});
+    $categories = Categories::get()->take(12);
+
+    // Categorias para los dropdowns en el navbar
+    $categoriesDrops = Categories::where('name', 'LIKE', "%Computo%")->orWhere('name', 'LIKE', "%Oficina y Escolar%")->orWhere('name', "Almacenamiento")->get();
+
+    // La variale responsive es para poder quitar el dropdown de esa categoria dependiendo del tamaño de pantalla del dispositivo
+    $categoryResponsive = $categoriesDrops->first();
+    $categoryResponsive->reponsive = true;
+    $categoriesDrops[0] = $categoryResponsive;
+
+    return view('frontend.vistasInicio.index', ['version' => $version, 'products' => $products, 'categories' => $categories, 'categoriesDrops' => $categoriesDrops]);
+})->name('inicio.version');
 
 Route::get('/prueba-job-default', function () {
     pruebaJob::dispatch('queue = secondary')->onQueue('secondary');

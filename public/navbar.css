@@ -1,0 +1,356 @@
+.navbarV1 {
+    z-index: 100;
+    position: relative;
+    width: 100vw;
+    padding: 7px 0;
+    background: rgba(255, 101, 30, 0.442);
+    /* background: linear-gradient(180deg, rgba(241, 76, 0, 1) 35%, rgba(255, 132, 0, 1) 72%); */
+}
+
+.navbar-PC {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    background-color: transparent;
+}
+
+.navbar-PC .section1 {
+    width: 100%;
+    display: flex;
+    margin-bottom: 0px;
+}
+
+.navbar-PC .section1 .logo {
+    width: 120px;
+    margin-top: 4px;
+}
+
+.navbar-PC .section1 .logo img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin-left: 15px;
+}
+
+.navbar-PC .section1 .div-search {
+    width: 50%;
+    margin-left: 5%;
+}
+
+.navbar-PC .section1 .div-search input {
+    padding: 8.5px 15px;
+    border-radius: 2px;
+    padding-right: 50px;
+    width: 100%;
+    border: none;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.265);
+}
+
+.navbar-PC .section1 .div-search form {
+    display: flex;
+}
+
+.navbar-PC .section1 .div-search button {
+    background: unset;
+    padding: 7px;
+    padding-top: 3px;
+    padding-left: 11px;
+    border: unset;
+    border-left: 1px rgba(0, 0, 0, 0.3) solid;
+    margin-left: -40px;
+}
+
+.navbar-PC .section1 .div-search button svg {
+    fill: rgba(0, 0, 0, 0.6);
+    width: 17px;
+    height: 17px;
+}
+
+.navbar-PC .section1 .div-search input:focus {
+    outline: none;
+}
+
+.navbar-PC .section1 .payments {
+    display: flex;
+    justify-content: center;
+    width: 20%;
+    margin: 0 auto;
+}
+
+.navbar-PC .section1 .payments ul {
+    display: flex;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+.navbar-PC .section1 .payments li {
+    list-style: none;
+    margin-left: 9px;
+}
+
+.navbar-PC .section1 .payments li img {
+    width: 100%;
+    max-height: 19px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 13px;
+}
+
+.navbar-PC .section2 {
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+.navbar-PC .section2 .categories {
+    /* width: 74%; */
+    width: max-content;
+    display: flex;
+    justify-content: left;
+    margin-left: 15.5%;
+    /* border: 1px rgba(0, 0, 0, 0.3) solid; */
+}
+
+.navbar-PC .section2 .drop-content .drop-menu-button {
+    background-color: unset;
+    border: none;
+    padding: 8px;
+    padding-bottom: 0;
+    margin-bottom: 2px;
+    position: relative;
+}
+
+.navbar-PC .section2 .drop-content .drop-menu-button::before {
+    content: "";
+    width: 0;
+    opacity: 0;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    border-radius: 1px;
+    transition: opacity .4s ease-in-out, width .4s ease-in-out, left .4s ease-in-out;
+}
+
+.navbar-PC .section2 .drop-content:hover .drop-menu-button::before {
+    width: 100%;
+    left: 0;
+    opacity: 1;
+}
+
+.navbar-PC .section2 .drop-content .drop-menu-button span {
+    margin-right: 8px;
+    color: rgba(0, 0, 0, 0.7);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 13.5px;
+}
+
+.navbar-PC .section2 .drop-content .drop-menu-button svg {
+    fill: rgba(0, 0, 0, 0.5);
+    width: 12px;
+    height: 12px;
+}
+
+.navbar-PC .section2 .drop-content {
+    display: block;
+    position: relative;
+    margin-right: 10px;
+}
+
+.navbar-PC .section2 .drop-content:last-child {
+    margin-right: 0;
+}
+
+.navbar-PC .section2 .drop-content .drop-body {
+    position: absolute;
+    padding: 14px 0;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    /* background-color: rgba(41, 41, 41, 1); */
+    border-radius: 5px;
+    top: 40px;
+    left: 0;
+    width: 300px;
+    transform: translate(-35%, 0);
+    height: max-content;
+    visibility: hidden;
+    transition: visibility .3s ease-in-out;
+}
+
+.navbar-PC .section2 .drop-content:hover .drop-body {
+    display: block;
+    visibility: visible;
+}
+
+.navbar-PC .section2 .drop-content .drop-body hr {
+    width: 95%;
+    margin: 8px auto;
+    color: rgba(0, 0, 0, 0.7);
+    /* background-color: ; */
+    /* border: 0; */
+    height: 1px;
+    border-radius: 2px;
+    /* background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgb(0, 0, 0), rgba(0, 0, 0, 0.5) 100%); */
+}
+
+.navbar-PC .section2 .drop-content .drop-body div {
+    text-decoration: none;
+    padding: 8px 0;
+    width: 100%;
+    text-align: left;
+    padding-left: 20px;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    cursor: pointer;
+    position: relative;
+    z-index: 99;
+}
+
+.navbar-PC .section2 .drop-content .drop-body div::before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 101, 30, 0.923);
+    transition: width .5s ease-in-out;
+    z-index: -1;
+}
+
+.navbar-PC .section2 .drop-content .drop-body div:hover::before {
+    width: 100%;
+}
+
+.navbar-PC .section2 .user {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 34%;
+    display: flex;
+    justify-content: center;
+    /* border: 1px rgba(0, 0, 0, 0.3) solid; */
+}
+
+.navbar-PC .section2 .user .link {
+    background-color: unset;
+    border: none;
+    padding: 8px 14px;
+    padding-bottom: 0;
+    margin-top: 4px;
+    position: relative;
+    text-decoration: none;
+    margin-right: 5px;
+    color: rgba(0, 0, 0, 0.7);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 13.5px;
+}
+
+.navbar-PC .section2 .user .link::before {
+    content: "";
+    width: 0;
+    opacity: 0;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    border-radius: 1px;
+    transition: opacity .4s ease-in-out, width .4s ease-in-out, left .4s ease-in-out;
+}
+
+.navbar-PC .section2 .user .link:hover::before {
+    width: 100%;
+    left: 0;
+    opacity: 1;
+}
+
+.navbar-PC .section2 .user .cartLink svg {
+    width: 20px;
+    height: 20px;
+    fill: rgba(0, 0, 0, 0.6);
+    margin-bottom: 3px;
+    /* margin-top: -7px; */
+}
+
+.navbar-PC .section2 .user .wishlistLink svg {
+    width: 17px;
+    height: 17px;
+    fill: rgba(0, 0, 0, 0.6);
+    margin-top: 0px;
+}
+
+.navbar-PC .section2 .user-drop .drop-body {
+    background-color: white;
+    border-radius: 2px;
+    width: 280px;
+    padding-top: 0;
+}
+
+.navbar-PC .section2 .user-drop .drop-menu-button .svgUser {
+    width: 17px;
+    height: 17px;
+    fill: rgba(0, 0, 0, 0.7);
+    margin-right: 5px;
+    margin-top: -3px;
+}
+
+.navbar-PC .section2 .user-drop .drop-body .user-name {
+    /* position: relative; */
+    padding: 10px 4px;
+    display: flex;
+}
+
+.navbar-PC .section2 .user-drop .drop-body .user-name picture {
+    /* position: absolute; */
+    width: 33%;
+    /* height: 110px; */
+    /* margin-right: 4px; */
+    /* border: 1px rgba(0, 0, 0, 0.3) solid; */
+    margin-top: 0;
+    /* left: 0; */
+    /* top: ; */
+}
+
+.navbar-PC .section2 .user-drop .drop-body .user-name picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.navbar-PC .section2 .user-drop .drop-body .user-name .name-welcome {
+    width: 67%;
+    /* border: 1px rgba(0, 0, 0, 0.3) solid; */
+    text-align: center;
+    position: relative;
+}
+
+.navbar-PC .section2 .user-drop .drop-body .user-name .name-welcome p {
+    color: rgba(0, 0, 0, 0.8);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 13px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: max-content;
+}
+
+.navbar-PC .section2 .user-drop .drop-body div {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 14px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+}
+.navbar-PC .section2 .user-drop .drop-body div:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+.navbar-PC .section2 .user-drop .drop-body div:hover::before {
+    width: 0;
+}
