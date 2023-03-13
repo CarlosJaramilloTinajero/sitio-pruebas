@@ -8,6 +8,7 @@ use App\Models\Product;
 use App\Models\ProductSupplier;
 use App\Models\subcategories;
 use App\Models\Warehouse;
+use Illuminate\Support\Facades\Storage;
 
 class ExelService extends ExelConection
 {
@@ -191,8 +192,26 @@ class ExelService extends ExelConection
             'i' => 0,
             'bar' => $bar
         ];
-        $this->exelHelper->foreachDatos($response['DATA'], function ($dato) use ($use) {
+        // $this->exelHelper->foreachDatos($response['DATA'], function ($dato) use ($use) {
+
+        foreach ($response['DATA'] as $dato) {
             if ($product = Product::where('sku', trim($dato['sku']))->first()) {
+
+
+                // Codigo descargar imagenes
+                foreach ($dato['imagenes'] as $imagenUrl) {
+
+                    $urlExplode = explode('/', $imagenUrl);
+                    $imageName = $urlExplode[count($urlExplode) - 1];
+                    $path = 'Images/' . $product->brand->name . '/' . $product->sku . '/' . $imageName;
+
+                    if (!Storage::exists($path)) {
+                        $imgageData = file_get_contents($imagenUrl);
+                        Storage::put($path, $imgageData);
+                    }
+                }
+
+
                 if ($product->img_path == null) {
                     $product->img_path = isset($dato['imagenes'][0]) ? $dato['imagenes'][0] : null;
                     $product->save();
@@ -202,7 +221,9 @@ class ExelService extends ExelConection
             //     dd($dato);
             // }
             $use['bar']->advance();
-        });
+        }
+
+        // });
         $bar->finish();
     }
 }
