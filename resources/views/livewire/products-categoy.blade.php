@@ -1,6 +1,6 @@
 <div>
     <link rel="stylesheet" href="{{ asset('productV2.css') }}">
-    <section class="contenedorForm mb-4 loading">
+    <section class="contenedorForm mb-4">
         <div style="display: flex; margin-top: 20px;">
             <input type="text" wire:model="search" id="search" wire:keyup.enter="searchEvent" placeholder="Buscar producto" class="form-control">
             <button class=" btn-search" wire:click="searchEvent"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -8,7 +8,7 @@
                 </svg> <span>Buscar</span></button>
         </div>
     </section>
-    <div class="filtros loading">
+    <div class="filtros">
         <div class="dropdown">
             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-funnel" viewBox="0 0 16 16">
@@ -34,7 +34,7 @@
         </div>
     </div>
 
-    <section class="productsVersions row loading">
+    <section class="productsVersions row">
         @foreach ($productos as $product)
         <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
             <section class="productV2Div" style="margin-left: auto; margin-right: auto;">
@@ -105,24 +105,8 @@
         {{ $productos->links() }}
     </section>
 
-    <div class="animacionCarga" id="animacionCarga">
 
-        <script>
-            window.onload = () => {
-                window.scroll(0, 0);
-            };
-            let loadings = document.getElementsByClassName('loading');
-            let id = setTimeout(() => {
-                let animacion = document.getElementById('animacionCarga');
-                animacion.style.opacity = 0;
-                for (let i = 0; i < loadings.length; i++) {
-                    loadings[i].style.opacity = "1";
-                }
-                window.clearInterval(id);
-            }, 2000);
-        </script>
-
-        <!-- <section class="ietmsP1 row" id="ietmsP">
+        {{-- <!-- <section class="ietmsP1 row" id="ietmsP">
         @foreach ($productos as $product)
         <div class="col-md-4 col-xl-3">
             <div class="ietmP1">
@@ -154,5 +138,4 @@
             </div>
         </div>
         @endforeach
-    </section> -->
-    </div>
+    </section> --> --}}

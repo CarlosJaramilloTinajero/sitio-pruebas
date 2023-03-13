@@ -3,7 +3,9 @@
     {{-- <!-- <link rel="stylesheet" href="{{ asset('productV4.css') }}"> --> --}}
 
     <!-- Slide principal computadora -->
-    <section class="loading splide SlideSplide d-none d-md-block" aria-label="Splide Basic HTML Example">
+    <section class="loading splide SlideSplide d-none d-md-block" 
+    data-splide='{"type":"loop","perPage":1,"padding": "12rem"}'
+        aria-label="Splide Basic HTML Example">
         <div class="splide__arrows">
             <button class="splide__arrow splide__arrow--prev" style="opacity: 0;">
                 Prev
@@ -14,17 +16,17 @@
         </div>
         <div class="splide__track">
             <ul class="splide__list">
-                <li class="splide__slide">
+                <li class="splide__slide" style="padding-left: 2%; padding-right: 2%;">
                     <img class="imageSlide"
                         src="https://www.mervins.com.mx/storage/images/banners/OjfdL5Zs3RVo5BYTCmAxP7xAD8uc64MqoAj2OIR4.webp"
                         alt="">
                 </li>
-                <li class="splide__slide">
+                <li class="splide__slide" style="padding-left: 2%; padding-right: 2%;">
                     <img class="imageSlide"
                         src="https://www.mervins.com.mx/storage/images/banners/COYh3pZhn5BpvT4Iczg72iPEC5YSvPItnN4MCfJt.webp"
                         alt="">
                 </li>
-                <li class="splide__slide">
+                <li class="splide__slide" style="padding-left: 2%; padding-right: 2%;">
                     <img class="imageSlide"
                         src="https://www.mervins.com.mx/storage/images/banners/bec38ayEYMSj61IVw0SPqJfmWevKRLE18fSNzAZq.webp"
                         alt="">

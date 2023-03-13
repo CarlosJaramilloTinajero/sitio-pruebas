@@ -160,9 +160,54 @@
     margin-right: 10px;
 }
 
+.navbar-PC .section2 .nav-arbol {
+    /* left: 3%; */
+    /* top: 0; */
+    /* position: absolute; */
+    margin-left: 3.65%;
+}
+
 .navbar-PC .section2 .drop-content:last-child {
     margin-right: 0;
 }
+
+.navbar-PC .section2 .nav-arbol .drop-body div .menu-rigth {
+    position: absolute;
+    padding: 14px 0;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    /* background-color: rgba(41, 41, 41, 1); */
+    border-radius: 5px;
+    top: 0;
+    left: 135.3%;
+    width: 300px;
+    transform: translate(-35%, 0);
+    height: 300px;
+    visibility: hidden;
+    transition: visibility .3s ease-in-out;
+}
+
+.navbar-PC .section2 .nav-arbol .drop-body div:hover .menu-rigth {
+    display: block;
+    visibility: visible;
+}
+
+.navbar-PC .section2 .nav-arbol .drop-body .button-div {
+    position: unset;
+    transition: background-color .3s ease-in-out;
+}
+
+.navbar-PC .section2 .nav-arbol .drop-body .button-div:hover {
+    background-color: rgba(255, 101, 30, 0.442);
+}
+
+.navbar-PC .section2 .nav-arbol .drop-body .button-div::before {
+    height: 0;
+    content: "";
+    background-color: unset;
+}
+
 
 .navbar-PC .section2 .drop-content .drop-body {
     position: absolute;
@@ -348,9 +393,42 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 500;
 }
+
 .navbar-PC .section2 .user-drop .drop-body div:hover {
     background-color: rgba(0, 0, 0, 0.08);
 }
+
 .navbar-PC .section2 .user-drop .drop-body div:hover::before {
     width: 0;
+}
+
+.navbar-PC .section2 .category_jerarqui {
+    display: flex;
+    margin-left: 10px;
+}
+
+.navbar-PC .section2 .category_jerarqui .category_je {
+    margin: 0 3px;
+    padding-top: 7px;
+}
+
+.navbar-PC .section2 .category_jerarqui .category_je svg {
+    width: 12px;
+    height: 12px;
+    fill: rgba(0, 0, 0, 0.8);
+    margin: 0 3px;
+}
+
+.navbar-PC .section2 .category_jerarqui .category_je a {
+    padding: 8px 0;
+    padding-bottom: 0;
+    margin-bottom: 2px;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 13px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.navbar-PC .section2 .category_jerarqui .category_je a:hover {
+    color: rgba(0, 0, 0, .9);
 }

@@ -1,0 +1,91 @@
+.contenedorSearch {
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.tituloSearch {
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 27px;
+    width: max-content;
+    margin: 20px auto;
+
+}
+
+.contenedorSearch .childs {
+    /* display: flex; */
+    margin: 20px auto;
+}
+
+.contenedorSearch .childs .child {
+    margin: 0 auto;
+    width: 100%;
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: box-shadow .3s ease-in-out;
+}
+
+.contenedorSearch .childs .child:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+.contenedorSearch .childs .child .title-div {
+    cursor: pointer;
+    width: 100%;
+    padding: 10px 0;
+    background-color: rgba(255, 101, 30, 0.1);
+    text-align: center;
+}
+
+.contenedorSearch .childs .child .title-div p {
+    color: rgba(150, 48, 0, 0.9);
+    margin-bottom: 0;
+    font-weight: 600;
+    font-size: 15px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.contenedorSearch .childs .child .imagen {
+    width: 100%;
+    height: 240px;
+    background-color: white;
+}
+
+.contenedorSearch .childs .child .imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.contenedorSearch .childs .child .relations {
+    padding-top: 10px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 85%;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(2px);
+    transition: top .5s ease-in-out;
+}
+
+.contenedorSearch .childs .child:hover .relations {
+    top: 15%;
+}
+
+.contenedorSearch .childs .child .relations a {
+    text-decoration: none;
+    color: rgba(186, 59, 0, 0.952);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    padding-left: 5px;
+    /* padding-top: 15px; */
+}
+
+.contenedorSearch .childs .child .relations a:hover {
+    color: rgba(245, 77, 0, 0.952);
+}

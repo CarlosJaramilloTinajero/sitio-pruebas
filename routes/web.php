@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\apiExelPruebaController;
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\CategoryJerraquiController;
 use App\Http\Controllers\controladorSitio;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\MarcaController;
@@ -9,7 +10,9 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\products;
 use App\Http\Controllers\pruebasGuzzle;
 use App\Http\Controllers\registerController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\userController;
+use App\Http\Helpers\FiltrosHelper;
 use App\Jobs\newUser;
 use App\Jobs\pruebaJob;
 use App\Models\Categories;
@@ -71,17 +74,7 @@ Route::get('/productos-catalogo/{version}', function ($version) {
 
 Route::get('/vistas-inicio/{version}', function ($version) {
     $products = Product::where('category_id', 1)->get()->take(30);
-    $categories = Categories::get()->take(12);
-
-    // Categorias para los dropdowns en el navbar
-    $categoriesDrops = Categories::where('name', 'LIKE', "%Computo%")->orWhere('name', 'LIKE', "%Oficina y Escolar%")->orWhere('name', "Almacenamiento")->get();
-
-    // La variale responsive es para poder quitar el dropdown de esa categoria dependiendo del tamaño de pantalla del dispositivo
-    $categoryResponsive = $categoriesDrops->first();
-    $categoryResponsive->reponsive = true;
-    $categoriesDrops[0] = $categoryResponsive;
-
-    return view('frontend.vistasInicio.index', ['version' => $version, 'products' => $products, 'categories' => $categories, 'categoriesDrops' => $categoriesDrops]);
+    return view('frontend.vistasInicio.index', ['version' => $version, 'products' => $products]);
 })->name('inicio.version');
 
 Route::get('/prueba-job-default', function () {
@@ -93,6 +86,52 @@ Route::get('/getUser/{id}', function ($id) {
     $user = User::find($id);
     newUser::dispatch($user)->onQueue('user');
 });
+
+
+
+// buscar con la jerarquia
+Route::get('/search/{search?}', [SearchController::class, 'search'])->name('search');
+
+// ver arbol
+Route::get('/ver-arbol', function () {
+    $arbol = (new FiltrosHelper())->getArbolName();
+    dd($arbol);
+});
+
+
+// categorias jerarquicas
+Route::resource('jerarquia', CategoryJerraquiController::class);
+
+
+
+Route::get('/editor-quill', function () {
+    return view('frontend.editoresBlog.editor-quill');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 Route::get('/prueba-job', function () {
@@ -114,10 +153,4 @@ Route::get('/prueba-job', function () {
     // pruebaJob::dispatchAfterResponse('despues de la repuesta');
 
     return response('Fin');
-});
-
-
-
-Route::get('/editor-quill', function () {
-    return view('frontend.editoresBlog.editor-quill');
 });
