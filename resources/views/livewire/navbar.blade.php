@@ -43,6 +43,7 @@
                 </div>
                 <div class="section2">
 
+                    {{-- Arbol --}}
                     <div class="drop-content nav-arbol">
                         <button class="drop-menu-button"><span>Arbol
                             </span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -76,6 +77,8 @@
                             {{-- <div onclick="location.href=''">Ver mas...</div> --}}
                         </div>
                     </div>
+
+                    {{-- Ruta --}}
                     @php
                         $i = 0;
                     @endphp
@@ -87,6 +90,14 @@
                                 @endphp
                                 <div class="category_je">
                                     <a href="{{ $item['search'] }}">{{ $item['name'] }}</a>
+
+                                    @if (count($item['category']->getChilds) > 0 && $item['category']->id != $resultado['category_id'])
+                                        <div class="childs-by-name">
+                                            @foreach ($item['category']->getChilds as $item)
+                                                <div onclick="location.href='/search/{{ $item->busqueda }}'">{{ $item->name }}</div>
+                                            @endforeach
+                                        </div>
+                                    @endif
 
                                     @if ($i > 0 && $i < count($resultado['pathSpliceData']))
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"

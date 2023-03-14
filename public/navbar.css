@@ -178,7 +178,7 @@
     background-color: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(10px);
     /* background-color: rgba(41, 41, 41, 1); */
-    border-radius: 5px;
+    /* border-radius: 5px; */
     top: 0;
     left: 135.3%;
     width: 300px;
@@ -216,7 +216,7 @@
     background-color: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(10px);
     /* background-color: rgba(41, 41, 41, 1); */
-    border-radius: 5px;
+    /* border-radius: 5px; */
     top: 40px;
     left: 0;
     width: 300px;
@@ -410,6 +410,7 @@
 .navbar-PC .section2 .category_jerarqui .category_je {
     margin: 0 3px;
     padding-top: 7px;
+    position: relative;
 }
 
 .navbar-PC .section2 .category_jerarqui .category_je svg {
@@ -431,4 +432,35 @@
 
 .navbar-PC .section2 .category_jerarqui .category_je a:hover {
     color: rgba(0, 0, 0, .9);
+}
+
+.navbar-PC .section2 .category_jerarqui .category_je .childs-by-name {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    background-color: rgba(0, 0, 0, .8);
+    backdrop-filter: blur(3px);
+    width: 180px;
+    transform: translate(-58%, 0);
+    /* height: 40px; */
+    padding: 14px 0;
+    display: none;
+}
+
+.navbar-PC .section2 .category_jerarqui .category_je:hover .childs-by-name {
+    display: block;
+}
+
+.navbar-PC .section2 .category_jerarqui .category_je .childs-by-name div {
+    text-align: left;
+    color: rgba(255, 255, 255, 0.95);
+    padding: 6px 14px;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: background-color .3s ease-in-out;
+}
+
+.navbar-PC .section2 .category_jerarqui .category_je .childs-by-name div:hover {
+    background-color: rgba(255, 101, 30, 0.442);
 }

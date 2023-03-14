@@ -184,13 +184,14 @@ class FiltrosHelper
                 $pathSplice[$key] = explode(" ", $pathSplice[$key]);
                 $pathSplice[$key] = implode("_", $pathSplice[$key]);
 
-                $categoryJerarqui = categoryJerarqui::where('name', $value)->first();
+                $categoryJerarqui = categoryJerarqui::with('getChilds')->where('name', $value)->first();
                 $pathSpliceIds[$categoryJerarqui->id] = $pathSplice[$key];
 
                 $pathSpliceIdsData[$categoryJerarqui->id] = [
                     'url' => $pathSplice[$key],
                     'name' => $categoryJerarqui->name,
                     'search' => $categoryJerarqui->busqueda,
+                    'category' => $categoryJerarqui
                 ];
             }
 
